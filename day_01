@@ -1,0 +1,8 @@
+1. show databases;
+use students;
+show tables;
+
+desc emp;
+insert into emp(emp_id,emp_name) values(1,'charu');insert into emp values(2,'harish');
+insert into emp(emp_name,emp_id) values('mani',3);
+select * from emp;
