@@ -1,8 +1,21 @@
-1. show databases;
-use students;
-show tables;
+Create a Database name as Products and table as Product Details
 
-desc emp;
-insert into emp(emp_id,emp_name) values(1,'charu');insert into emp values(2,'harish');
-insert into emp(emp_name,emp_id) values('mani',3);
-select * from emp;
+Product details should have following fields like Product ID, Product Name, Product Price
+
+Apply constraints and for Product Price it should allow only price greater than 10.
+
+Show the details of table as a proof of constraints applied
+
+create database products;
+use products;
+create table product_details (
+  product_id tinyint unique,
+  product_name varchar(20) not null,
+  product_price int not null check ( product_price>10)
+  );
+  show databases;
+  select * from product_details;
+  insert into product_details (product_id , product_name , product_price) values
+  ( 001, 'pen', 20) , ( 002, 'pencil', 15) , ( 003, 'scale', 25) , ( 004, 'book', 50) , (005, 'eraser', 20) , (006, 'tape' , 30);
+  
+  
