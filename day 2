@@ -1,1 +1,25 @@
-sjhh
+Create  table name as Travels with whatever the details needed (Apply constraints)
+
+Insert values into the Travels table and then add / change a column
+*------------------------------------------------------------------*
+
+create database travel;
+use travel;
+create table travel_list(
+   customer_id tinyint primary key,
+   customer_name varchar (20) not null,
+   customer_place varchar (50) not null
+   );
+   
+   select * from travel_list;
+   
+   insert into travel_list ( customer_id , customer_name , customer_place)  values
+   (101, 'geetha' , 'dubai') , (102, 'govind', 'banglore') , (103, 'arun', 'coimbatore') , (104, 'janani', 'korea') ,
+   (105, 'lokesh', 'ooty');
+   
+   alter table travel_list
+   add column customer_age tinyint;
+   
+   alter table travel_list
+   rename column customer_age to age;
+
