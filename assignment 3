@@ -1,0 +1,19 @@
+Create a table with employee details and display the details of employee name starts with letter 'B' also
+ the salary should be above 20000.
+
+Create a product table. Display  product details with price in ascending order and 
+the product price should be below 1000 or product category as kids.
+
+ create database employee;
+ use employee;
+ create table employee_details (
+      emp_id tinyint unique,
+      emp_name varchar (10) not null,
+      emp_salary int not null check (emp_salary > 20000)
+      );
+      select * from employee_details 
+      where emp_name like 'B%' and salary > 20000;
+      
+      
+      select * from product where product_price < 1000 order by price;
+      
