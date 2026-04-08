@@ -1,1 +1,38 @@
+Create a table Employees and write a window function to Rank details based on Salary.
 
+Also write a window function to get maximum and minimum Salary
+
+
+CREATE TABLE Employees (
+    EmpID INT,
+    Name VARCHAR(50),
+    Department VARCHAR(50),
+    Salary INT
+);
+INSERT INTO Employees VALUES
+(1, 'Ravi', 'IT', 50000),
+(2, 'Sita', 'HR', 60000),
+(3, 'Arun', 'IT', 70000),
+(4, 'Meena', 'HR', 55000),
+(5, 'John', 'IT', 70000);
+
+SELECT 
+    EmpID,
+    Name,
+    Salary,
+    RANK() OVER (ORDER BY Salary DESC) AS Salary_Rank
+FROM Employees;
+
+SELECT 
+    EmpID,
+    Name,
+    Salary,
+    MAX(Salary) OVER () AS Max_Salary
+FROM Employees;
+
+SELECT 
+    EmpID,
+    Name,
+    Salary,
+    MIN(Salary) OVER () AS Min_Salary
+FROM Employees;
