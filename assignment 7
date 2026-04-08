@@ -1,0 +1,23 @@
+Create a procedure  without parameters to display student marks above 50.
+
+Create a procedure to get input for student id and display that student details.
+
+Create a procedure to get input for student id and output as student name.
+
+CREATE PROCEDURE GetStudentsAbove50
+AS
+BEGIN
+    SELECT *
+    FROM Students
+    WHERE Marks > 50;
+END;
+EXEC GetStudentsAbove50;
+CREATE PROCEDURE GetStudentName
+    @StudentID INT,
+    @StudentName VARCHAR(50) OUTPUT
+AS
+BEGIN
+    SELECT @StudentName = Name
+    FROM Students
+    WHERE StudentID = @StudentID;
+END;
