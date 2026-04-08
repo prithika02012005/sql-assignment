@@ -1,0 +1,13 @@
+Create a function to return student mark for a given student name.
+CREATE FUNCTION GetStudentMarks (@StudentName VARCHAR(50))
+RETURNS INT
+AS
+BEGIN
+    DECLARE @Marks INT;
+
+    SELECT @Marks = Marks
+    FROM Students
+    WHERE Name = @StudentName;
+
+    RETURN @Marks;
+END;
