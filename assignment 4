@@ -1,0 +1,15 @@
+Display Minimum Salary, Maximum Salary and Average Salary with 3 sepearate columns
+
+Take a String like "GOOD MORNING" display only "GOOD", length of "MORNING". Join a word "afternoon" with "GOOD"
+ which should be taken from "GOOD MORNING" and display result in all CAPS.
+ 
+ SELECT 
+    MIN(salary) AS minimum_salary,
+    MAX(salary) AS maximum_salary,
+    AVG(salary) AS average_salary
+FROM employees;
+
+SELECT 
+    SUBSTRING('GOOD MORNING', 1, 4) AS first_word,
+    LENGTH(SUBSTRING('GOOD MORNING', 6, 7)) AS length_of_second_word,
+    UPPER(CONCAT(SUBSTRING('GOOD MORNING', 1, 4), ' afternoon')) AS final_result;
