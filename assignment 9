@@ -1,0 +1,29 @@
+Write a program for Insert Trigger and explain
+
+An INSERT trigger is a special SQL block that automatically runs when a new record is inserted into a table.
+
+CREATE TABLE Students (
+    StudentID INT,
+    Name VARCHAR(50),
+    Marks INT
+);
+
+CREATE TABLE Student_Log (
+    LogID INT IDENTITY(1,1),
+    StudentID INT,
+    Action VARCHAR(50)
+);
+
+CREATE TRIGGER trg_AfterInsertStudent
+ON Students
+AFTER INSERT
+AS
+BEGIN
+    INSERT INTO Student_Log (StudentID, Action)
+    SELECT StudentID, 'Inserted'
+    FROM inserted;
+END;
+
+INSERT INTO Students VALUES (1, 'Ravi', 80);
+
+An INSERT trigger is a database object that automatically executes after a record is inserted into a table.
